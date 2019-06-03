@@ -1,6 +1,6 @@
 class DietsController < ApplicationController
   def index
-    @diets = Diet.all
+    @diets = Diet.page(params[:page]).per(10)
 
     render("diet_templates/index.html.erb")
   end
