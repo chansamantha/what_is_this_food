@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @food_diet.errors.any? %>
+  <% @food_diet.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit food diet #<%= @food_diet.id %>
+</h1>
+
+<hr>
+
+<!-- Form food_diet start -->
+<form action="/update_food_diet/<%= @food_diet.id %>" method="post">
+<!-- Form food_diet end -->
+
+  <!-- Label and input for food_id start -->
+  <div class="form-group">
+    <label for="food_id">
+      Food
+    </label>
+
+    <!-- Input for food_id start -->
+    <input type="text" id="food_id" name="food_id" class="form-control" value="<%= @food_diet.food_id %>">
+    <!-- Input for food_id end -->
+  </div>
+  <!-- Label and input for food_id end -->
+
+  <!-- Label and input for diet_id start -->
+  <div class="form-group">
+    <label for="diet_id">
+      Diet
+    </label>
+
+    <!-- Input for diet_id start -->
+    <input type="text" id="diet_id" name="diet_id" class="form-control" value="<%= @food_diet.diet_id %>">
+    <!-- Input for diet_id end -->
+  </div>
+  <!-- Label and input for diet_id end -->
+
+  <!-- Label and input for compliant start -->
+  <div class="form-check">
+    <input type="hidden" value="0" name="compliant">
+    <!-- Input for compliant start -->
+    <input id="compliant" class="form-check-input" name="compliant" type="checkbox" value="1" <%= "checked" if @food_diet.compliant %>>
+    <!-- Input for compliant end -->
+    <label for="compliant" class="form-check-label">
+      Compliant
+    </label>
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update food diet
+  </button>
+</form>
+
+<hr>
+
+<a href="/food_diets">
+  Go back
+</a>

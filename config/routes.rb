@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Food diet resource:
+
+  # CREATE
+  get("/food_diets/new", { :controller => "food_diets", :action => "new_form" })
+  post("/create_food_diet", { :controller => "food_diets", :action => "create_row" })
+
+  # READ
+  get("/food_diets", { :controller => "food_diets", :action => "index" })
+  get("/food_diets/:id_to_display", { :controller => "food_diets", :action => "show" })
+
+  # UPDATE
+  get("/food_diets/:prefill_with_id/edit", { :controller => "food_diets", :action => "edit_form" })
+  post("/update_food_diet/:id_to_modify", { :controller => "food_diets", :action => "update_row" })
+
+  # DELETE
+  get("/delete_food_diet/:id_to_remove", { :controller => "food_diets", :action => "destroy_row" })
+
+  #------------------------------
+
   devise_for :users
   # Routes for the User resource:
 
