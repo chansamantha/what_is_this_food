@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Diet resource:
+
+  # CREATE
+  get("/diets/new", { :controller => "diets", :action => "new_form" })
+  post("/create_diet", { :controller => "diets", :action => "create_row" })
+
+  # READ
+  get("/diets", { :controller => "diets", :action => "index" })
+  get("/diets/:id_to_display", { :controller => "diets", :action => "show" })
+
+  # UPDATE
+  get("/diets/:prefill_with_id/edit", { :controller => "diets", :action => "edit_form" })
+  post("/update_diet/:id_to_modify", { :controller => "diets", :action => "update_row" })
+
+  # DELETE
+  get("/delete_diet/:id_to_remove", { :controller => "diets", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Food diet resource:
 
   # CREATE
