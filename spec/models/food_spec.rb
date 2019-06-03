@@ -4,6 +4,8 @@ RSpec.describe Food, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:diets) }
+
     end
 
     describe "InDirect Associations" do
