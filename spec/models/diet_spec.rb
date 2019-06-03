@@ -4,6 +4,8 @@ RSpec.describe Diet, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_one(:food_diet) }
+
     it { should belong_to(:food) }
 
     end
