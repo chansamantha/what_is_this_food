@@ -5,33 +5,23 @@
 
 <hr>
 
-<!-- Form diet start -->
 <form action="/create_diet" method="post">
-<!-- Form diet end -->
 
-  <!-- Label and input for food_id start -->
   <div class="form-group">
     <label for="food_id">
       Food
     </label>
 
-    <!-- Input for food_id start -->
     <%= select_tag(:food_id, options_from_collection_for_select(Food.all, :id, :food_name, @diet.food_id), :class => "form-control") %>
-    <!-- Input for food_id end -->
   </div>
-  <!-- Label and input for food_id end -->
 
-  <!-- Label and input for diet_name start -->
   <div class="form-group">
     <label for="diet_name">
       Diet name
     </label>
 
-    <!-- Input for diet_name start -->
     <input type="text" id="diet_name" name="diet_name" class="form-control">
-    <!-- Input for diet_name end -->
   </div>
-  <!-- Label and input for diet_name end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create diet
