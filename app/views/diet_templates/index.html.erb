@@ -58,7 +58,11 @@
 
         <!-- Display diet.food_id start -->
         <td>
-          <%= diet.food.food_name %>
+          <% if diet.food.present? %>
+            <a href="/foods/<%= diet.food.id %>">
+              <%= diet.food.food_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display diet.food_id end -->
 

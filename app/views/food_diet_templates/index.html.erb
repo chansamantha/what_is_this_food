@@ -68,7 +68,11 @@
 
         <!-- Display food_diet.diet_id start -->
         <td>
-          <%= food_diet.diet.created_at %>
+          <% if food_diet.diet.present? %>
+            <a href="/diets/<%= food_diet.diet.id %>">
+              <%= food_diet.diet.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display food_diet.diet_id end -->
 

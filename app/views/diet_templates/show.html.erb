@@ -34,7 +34,11 @@
       </dt>
       <!-- Display food_id start -->
       <dd>
-        <%= @diet.food_id %>
+        <% if @diet.food.present? %>
+          <a href="/foods/<%= @diet.food_id %>">
+            <%= @diet.food.food_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display food_id end -->
 
