@@ -27,7 +27,7 @@
     </label>
 
     <!-- Input for diet_id start -->
-    <input type="text" id="diet_id" name="diet_id" class="form-control" value="<%= @food_diet.diet_id %>">
+    <%= select_tag(:diet_id, options_from_collection_for_select(Diet.all, :id, :created_at, @food_diet.diet_id), :class => "form-control") %>
     <!-- Input for diet_id end -->
   </div>
   <!-- Label and input for diet_id end -->
