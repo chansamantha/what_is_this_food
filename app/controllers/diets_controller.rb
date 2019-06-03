@@ -32,6 +32,21 @@ class DietsController < ApplicationController
     end
   end
 
+  def create_row_from_food
+    @diet = Diet.new
+
+    @diet.food_id = params.fetch("food_id")
+    @diet.diet_name = params.fetch("diet_name")
+
+    if @diet.valid?
+      @diet.save
+
+      redirect_to("/foods/#{@diet.food_id}", notice: "Diet created successfully.")
+    else
+      render("diet_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @diet = Diet.find(params.fetch("prefill_with_id"))
 

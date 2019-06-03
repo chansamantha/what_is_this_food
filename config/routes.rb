@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/diets/new", { :controller => "diets", :action => "new_form" })
   post("/create_diet", { :controller => "diets", :action => "create_row" })
+  post("/create_diet_from_food", { :controller => "diets", :action => "create_row_from_food" })
 
   # READ
   get("/diets", { :controller => "diets", :action => "index" })

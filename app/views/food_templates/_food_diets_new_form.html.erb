@@ -1,0 +1,25 @@
+<!-- Form diet start -->
+<form action="/create_diet_from_food" method="post">
+<!-- Form diet end -->
+
+  <!-- Label and input for food_id start -->
+  <!-- Input for food_id start -->
+  <input type="hidden" name="food_id" value="<%= @food.id %>">
+  <!-- Input for food_id end -->
+
+  <!-- Label and input for diet_name start -->
+  <div class="form-group">
+    <label for="diet_name">
+      Diet name
+    </label>
+
+    <!-- Input for diet_name start -->
+    <input type="text" id="diet_name" name="diet_name" class="form-control" value="<%= @diet.diet_name %>">
+    <!-- Input for diet_name end -->
+  </div>
+  <!-- Label and input for diet_name end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create diet
+  </button>
+</form>
