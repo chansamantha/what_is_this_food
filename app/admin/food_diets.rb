@@ -1,4 +1,6 @@
 ActiveAdmin.register FoodDiet do
+
+ permit_params :food_id, :diet_id, :compliant
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
