@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Food Diets
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @food.food_diets.each do |food_diet| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/food_diets/<%= food_diet.id %>">
+          <%= food_diet.food_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>
