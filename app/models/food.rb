@@ -5,6 +5,10 @@ class Food < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :food_diets,
+             :through => :diets,
+             :source => :food_diet
+
   # Validations
 
 end

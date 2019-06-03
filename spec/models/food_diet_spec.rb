@@ -10,6 +10,8 @@ RSpec.describe FoodDiet, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_one(:food) }
+
     end
 
     describe "Validations" do
